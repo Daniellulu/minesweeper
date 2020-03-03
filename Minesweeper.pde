@@ -49,15 +49,19 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
+  
   for (int r = 0; r<NUM_ROWS; r++)
     for (int c = 0; c<NUM_COLS; c++)
-      if (mines.contains(buttons[r][c]))
+      if (mines.contains(buttons[r][c])) {
         buttons[r][c].clicked = true;
-  noLoop();
+        
+        noLoop();
+      }
 }
 public void displayWinningMessage()
 {
-  setLabel("You Won");
+  String won = "You Won";
+  buttons[NUM_ROWS][NUM_COLS].setLabel(won);
 }
 public boolean isValid(int r, int c)
 {
